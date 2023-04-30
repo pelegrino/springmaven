@@ -20,7 +20,7 @@ public class Usuario implements Serializable {
 	
 	private String nome;
 	
-	private int ideade;
+	private int idade;
 
 	
 	public Long getId() {
@@ -39,12 +39,13 @@ public class Usuario implements Serializable {
 		this.nome = nome;
 	}
 
-	public int getIdeade() {
-		return ideade;
+
+	public int getIdade() {
+		return idade;
 	}
 
-	public void setIdeade(int ideade) {
-		this.ideade = ideade;
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 	
 

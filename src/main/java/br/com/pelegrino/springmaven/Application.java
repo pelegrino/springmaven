@@ -1,4 +1,4 @@
-package br.com.pelegrino.springmaven;
+	package br.com.pelegrino.springmaven;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
