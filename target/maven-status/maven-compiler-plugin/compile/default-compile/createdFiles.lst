@@ -1,0 +1,4 @@
+br\com\pelegrino\springmaven\controllers\GreetingsController.class
+br\com\pelegrino\springmaven\Application.class
+br\com\pelegrino\springmaven\model\Usuario.class
+br\com\pelegrino\springmaven\repository\UsuarioRepository.class
