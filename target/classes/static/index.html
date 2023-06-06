@@ -10,6 +10,16 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
+	
+<style type="text/css">
+	html {
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-top: 5%;
+		margin-left: 5%;
+	}
+	
+</style>
 </head>
 <body>
 
@@ -57,6 +67,8 @@
 	          </div>
 	          <button type="button" class="btn btn-success" onclick="pesquisaUser()">Buscar</button>
 	        </form>
+	        
+	        <div style="height: 300px; overflow: scroll;">
 	        <table class="table" id="tabelaresultados">
 			  <thead>
 			    <tr>
@@ -69,6 +81,8 @@
 			  <tbody>
 			  </tbody>
 			</table>
+	        </div>
+			
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -92,18 +106,20 @@
 		
 	<script type="text/javascript">
 		
-		
 		function botaodeletar() {
 			var id = $('#id').val();
-			deleteUser(id);
 			
-			document.getElementById('form').reset();
+			if (id != null && id.trim() != '') {
+				deleteUser(id);
+				document.getElementById('form').reset();
+			}
+			
 		}
 		
 		
 		function deleteUser(id) {
 			
-			if(confirm('Deseja realmente deletar')) {
+			if(confirm('Deseja realmente deletar?')) {
 			
 			$.ajax({
 				method: "DELETE",
@@ -171,6 +187,19 @@
 			var id = $("#id").val();
 			var nome = $("#nome").val();	
 			var idade = $("#idade").val();
+			
+			if (nome == null || nome != null && nome.trim() == '') {
+				$("#nome").focus();
+				alert('Informe o nome');
+				return;
+			}
+			
+			if (idade == null || idade != null && idade.trim() == '') {
+				$("#idade").focus();
+				alert('Informe a idade');
+				return;
+			}
+			
 			
 			$.ajax({
 				method: "POST",
